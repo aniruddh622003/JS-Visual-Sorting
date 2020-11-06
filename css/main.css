@@ -1,0 +1,41 @@
+.bothead{
+    height: 15%;
+    width: 100%;
+    background-color: #326044;
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+}
+.array-container{
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    top: 0px;
+    display: flex;
+}
+
+.bothead .btn{
+    position: relative;
+    margin-left: 2%;
+    width: 15%;
+    margin-top: 1%;
+    height: 70%;
+    font-size: 20px;
+    background-color: #326044;
+    outline: none;
+    border: 1px solid white;
+    color: #fff;
+}
+.bothead .btn:hover{
+    background-color: #fff;
+    color: #326044;
+    transition: .2s;
+}
+.sortbtns{
+    width: 75%;
+    height: 100%;
+    margin-left: 5%;
+}
+.sortbtns .btn{
+    margin-top: 1.4%;
+}

@@ -1,4 +1,4 @@
-var delay_time = 0.2;
+var delay_time = .2;
 c_delay = 0;
 function div_update(div, height, color){
 

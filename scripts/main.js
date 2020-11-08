@@ -9,7 +9,6 @@
 var cont = document.getElementById("arrcont");
 var div_heights = [];
 var divs = [];
-console.log(cont.clientHeight);
 generate_array();
 
 var new_arr_btn = document.getElementById("newArray");

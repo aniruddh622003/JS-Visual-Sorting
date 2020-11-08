@@ -1,4 +1,3 @@
-// c_delay = 0;
 var bubble_Sort_btn = document.getElementById("bubble");
 bubble_Sort_btn.addEventListener("click", Bubble);
 

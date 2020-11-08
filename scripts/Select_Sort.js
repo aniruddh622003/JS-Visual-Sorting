@@ -1,10 +1,8 @@
 var selectbtn = document.getElementById("select");
 selectbtn.addEventListener("click", Select);
 
-console.log(div_heights)
 
 function Select(){
-    console.log("Selection sort");
     for(i=0; i<200; i++){
         var min=div_heights[i],index = i;
         for(j=i; j<200; j++){

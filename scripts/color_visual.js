@@ -1,5 +1,5 @@
 var delay_time = .2;
-c_delay = 0;
+var c_delay = 0;
 function div_update(div, height, color){
 
     setTimeout(function(){

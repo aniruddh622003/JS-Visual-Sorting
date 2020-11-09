@@ -1,52 +1,57 @@
 var merbtn = document.getElementById("merge");
-merbtn.addEventListener("click", function(){MergeSort(div_heights)});
+merbtn.addEventListener("click", function(){MergeSort(0, div_heights.length-1)});
 console.log(div_heights);
-function MergeSort(A){
-    console.log("Merge Sort");
-    var n = A.length;
-    
-    if(n<2) return;
-    mid = Math.floor(n/2);
-    var left = [], right = [];
-    for(i = 0; i < mid; i++){
-        left[i] = A[i];
-    }
-    for(i = mid; i < n; i++){
-        right[i-mid] = A[i];
-    }
-    MergeSort(left);
-    MergeSort(right);
-    Merge(left, right, A);
-}
-function Merge(left, right, A){
-    nL = left.length;
-    nR = right.length;
-    i=j=k=0;
 
-    while(i < nL && j < nR){
-        if(left[i] <= right[j]){
-            A[k] = left[i];
-            div_update(divs[k], A[k], "#007bbd");
-            k++;
-            i++;
+
+function MergeSort(start, end){
+    console.log("Merge Sort");
+    if(start < end){
+        var mid=Math.floor((start + end) / 2);
+        div_update(divs[mid],div_heights[mid],"#f7a500");//Color update
+
+        MergeSort(start,mid);
+        MergeSort(mid+1,end);
+
+        merge_sort(start,mid,end);
+    }
+}
+function merge_sort(start, mid, end){
+    var p=start,q=mid+1;
+
+    var Arr=[],k=0;
+
+    for(var i=start; i<=end; i++)
+    {
+        if(p>mid)
+        {
+            Arr[k++]=div_heights[q++];
+            div_update(divs[q-1],div_heights[q-1],"red");//Color update
         }
-        else{
-            A[k] = right[j];
-            div_update(divs[k], A[k], "#007bbd");
-            k++;
-            j++;
+        else if(q>end)
+        {
+            Arr[k++]=div_heights[p++];
+            div_update(divs[p-1],div_heights[p-1],"red");//Color update
+        }
+        else if(div_heights[p]<div_heights[q])
+        {
+            Arr[k++]=div_heights[p++];
+            div_update(divs[p-1],div_heights[p-1],"red");//Color update
+        }
+        else
+        {
+            Arr[k++]=div_heights[q++];
+            div_update(divs[q-1],div_heights[q-1],"red");//Color update
         }
     }
-    while(i < nL){
-        A[k] = left[i];
-        div_update(divs[k], A[k], "#007bbd");
-        i++;
-        k++;
+
+    for(var t=0;t<k;t++)
+    {
+        div_heights[start++]=Arr[t];
+        div_update(divs[start-1],div_heights[start-1],"#007bbd");//Color update
     }
-    while(j < nR){
-        A[k] = right[j];
-        div_update(divs[k], A[k], "#007bbd");
-        j++;
-        k++;
+    if(k >= div_heights.length -1){
+        for(j=0; j<=k; j++){
+            div_update(divs[j], div_heights[j], "#09ab00");
+        }
     }
 }

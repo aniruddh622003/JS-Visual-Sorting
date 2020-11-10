@@ -17,11 +17,10 @@ function Insertion(){
         for(j=hole; j<=i; j++){
             div_update(divs[j], div_heights[j], "#007bbd");
         }
-        if(i == div_heights.length -1){
-            for(j=0; j<=i; j++){
-                div_update(divs[j], div_heights[j], "#09ab00");
-            }
-        }
+        // if(i == div_heights.length -1){
+        //     for(j=0; j<=i; j++){
+        //         div_update(divs[j], div_heights[j], "#09ab00");
+        //     }
+        // }
     }
-    console.log(div_heights);
 }
